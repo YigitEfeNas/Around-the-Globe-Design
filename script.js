@@ -1,6 +1,6 @@
 const container = document.querySelector('.particle-container');
-const rows = 15;
-const cols = 30;
+const rows = 18;
+const cols = 36;
 const particles = [];
 
 for (let i = 0; i < rows * cols; i++) {
