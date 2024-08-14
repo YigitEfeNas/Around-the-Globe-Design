@@ -10,23 +10,33 @@ body {
 
 .particle-container {
     position: relative;
-    width: 600px; /* Adjust size based on your need */
+    width: 600px;
     height: 300px;
     display: grid;
-    grid-template-columns: repeat(30, 1fr); /* 30 columns */
-    grid-template-rows: repeat(15, 1fr); /* 15 rows */
-    gap: 15px; /* Increased space between particles */
-    border-radius: 45px; /* Rounded corners */
-    overflow: hidden; /* Ensures particles don't spill outside the container */
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: 15px;
+    border-radius: 25px;
+    overflow: hidden;
 }
 
 .particle {
-    width: 10px; /* Smaller circles */
+    width: 10px;
     height: 10px;
     background-color: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); /* Small shadow */
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
     opacity: 0.8;
     position: absolute;
-    transition: transform 0.3s ease;
+    transition: opacity 0.5s ease;
+    animation: move 5s infinite alternate;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(calc(10px - 5%), calc(10px - 5%));
+    }
 }
