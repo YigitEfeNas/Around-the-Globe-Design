@@ -10,8 +10,8 @@ body {
 
 .particle-container {
     position: relative;
-    width: 600px;
-    height: 300px;
+    width: 1000px;
+    height: 900px;
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(15, 1fr);
@@ -21,9 +21,9 @@ body {
 }
 
 .particle {
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
+    width: 12px;
+    height: 12px;
+    background-color: #333;
     border-radius: 50%;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
     opacity: 0.8;
