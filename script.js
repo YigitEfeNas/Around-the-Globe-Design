@@ -1,9 +1,8 @@
 const container = document.querySelector('.particle-container');
-const rows = 84; // Increased rows
-const cols = 95; // Increased columns
+const rows = 84;
+const cols = 95;
 const particles = [];
 
-// Create particles
 for (let i = 0; i < rows * cols; i++) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
@@ -11,19 +10,17 @@ for (let i = 0; i < rows * cols; i++) {
     const row = Math.floor(i / cols);
     const col = i % cols;
     
-    particle.style.top = `${row * (100 / rows)}%`;
-    particle.style.left = `${col * (100 / cols)}%`;
+    particle.style.top = ${row * (100 / rows)}%;
+    particle.style.left = ${col * (100 / cols)}%;
 
     const duration = Math.random() * 5 + 2;
     
-    // Apply random movement animation
-    particle.style.animation = `move ${duration}s ease-in-out infinite alternate`;
+    particle.style.animation = move ${duration}s ease-in-out infinite alternate;
     
     container.appendChild(particle);
     particles.push(particle);
 }
 
-// Function to handle particle movement on hover
 function handleMouseMove(event) {
     const rect = container.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
@@ -35,24 +32,18 @@ function handleMouseMove(event) {
         const particleY = (particleRect.top - rect.top) + (particleRect.height / 2);
         const distance = Math.sqrt(Math.pow(mouseX - particleX, 2) + Math.pow(mouseY - particleY, 2));
         
-        if (distance < 55) { // Adjusted mouse radius
-            // Move particles away from the cursor
-            const angle = Math.atan2(particleY - mouseY, particleX - mouseX);
-            const offsetX = Math.cos(angle) * (55 - distance);
-            const offsetY = Math.sin(angle) * (55 - distance);
-            particle.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        if (distance < 55) {
             particle.style.opacity = '0';
         } else {
-            particle.style.transform = 'translate(0, 0)';
             particle.style.opacity = '0.8';
         }
     });
 }
 
-// Reset particle opacity and position when the mouse leaves the container
+// Reset particle opacity when the mouse leaves the container
 function handleMouseLeave() {
     particles.forEach(particle => {
-        particle.style.transform = 'translate(0, 0)';
+        // Reset opacity
         particle.style.opacity = '0.8';
     });
 }
