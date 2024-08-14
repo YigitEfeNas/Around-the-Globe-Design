@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.particle-container {
+    position: relative;
+    width: 600px; /* Adjust size based on your needs */
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr); /* 30 columns */
+    grid-template-rows: repeat(15, 1fr); /* 15 rows */
+    gap: 15px; /* Increased space between particles */
+    border-radius: 45px; /* Rounded corners */
+    overflow: hidden; /* Ensures particles don't spill outside the container */
+}
+
+.particle {
+    width: 10px; /* Smaller circles */
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); /* Small shadow */
+    opacity: 0.8;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
