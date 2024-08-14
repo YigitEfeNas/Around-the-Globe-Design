@@ -10,7 +10,7 @@ body {
 
 .particle-container {
     position: relative;
-    width: 600px; /* Adjust size based on your needs */
+    width: 600px; /* Adjust size based on your need */
     height: 300px;
     display: grid;
     grid-template-columns: repeat(30, 1fr); /* 30 columns */
