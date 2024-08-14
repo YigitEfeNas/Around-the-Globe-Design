@@ -7,7 +7,7 @@ for (let i = 0; i < rows * cols; i++) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
     
-    // Calculate grid position
+    // Calculate grid positio
     const row = Math.floor(i / cols);
     const col = i % cols;
     
