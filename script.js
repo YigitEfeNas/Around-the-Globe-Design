@@ -1,8 +1,9 @@
 const container = document.querySelector('.particle-container');
-const rows = 18;
-const cols = 36;
+const rows = 24;
+const cols = 24;
 const particles = [];
 
+// Create particles
 for (let i = 0; i < rows * cols; i++) {
     const particle = document.createElement('div');
     particle.classList.add('particle');
@@ -16,9 +17,14 @@ for (let i = 0; i < rows * cols; i++) {
     const duration = Math.random() * 5 + 2;
     
     particle.style.animation = `move ${duration}s ease-in-out infinite alternate`;
-    
+
     container.appendChild(particle);
     particles.push(particle);
+
+    setInterval(() => {
+        const redOpacity = Math.random();
+        particle.style.backgroundColor = `rgba(143, 0, 19, ${redOpacity})`;
+    }, Math.random() * 5000 + 2000);
 }
 
 function handleMouseMove(event) {
