@@ -10,13 +10,12 @@ body {
 
 .particle-container {
     position: relative;
-    width: 1000px;
-    height: 900px;
+    width: 2000px;
+    height: 1800px;
     display: grid;
     grid-template-columns: repeat(30, 1fr);
     grid-template-rows: repeat(15, 1fr);
     gap: 15px;
-    border-radius: 50px;
     overflow: hidden;
 }
 
@@ -25,10 +24,10 @@ body {
     height: 12px;
     background-color: #999;
     border-radius: 50%;
-    box-shadow: 0 0 4px rgba(30, 30, 30, 0.6);
+    box-shadow: 0 0 4px rgba(30, 30, 30, 0.8);
     opacity: 0.7;
     position: absolute;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease, background-color 1s ease;
     animation: move 5s infinite alternate;
 }
 
